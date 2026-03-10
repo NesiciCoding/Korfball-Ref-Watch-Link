@@ -1,0 +1,7 @@
+com.wmeetsma.korfballrefwatch.app-resValues-0 /Users/wmeetsma/Documents/Korfball-Ref-Watch-Link/app/build/generated/res/resValues/debug
+com.wmeetsma.korfballrefwatch.app-updated_navigation_xml-1 /Users/wmeetsma/Documents/Korfball-Ref-Watch-Link/app/build/generated/updated_navigation_xml/debug
+com.wmeetsma.korfballrefwatch.app-packageDebugResources-2 /Users/wmeetsma/Documents/Korfball-Ref-Watch-Link/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.wmeetsma.korfballrefwatch.app-packageDebugResources-3 /Users/wmeetsma/Documents/Korfball-Ref-Watch-Link/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.wmeetsma.korfballrefwatch.app-debug-4 /Users/wmeetsma/Documents/Korfball-Ref-Watch-Link/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.wmeetsma.korfballrefwatch.app-debug-5 /Users/wmeetsma/Documents/Korfball-Ref-Watch-Link/app/src/debug/res
+com.wmeetsma.korfballrefwatch.app-main-6 /Users/wmeetsma/Documents/Korfball-Ref-Watch-Link/app/src/main/res

@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
@@ -38,9 +39,6 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
-    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -63,4 +61,10 @@ dependencies {
     
     // Lifecycle components
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    
+    // Socket.io for direct Wi-Fi sync
+    // OkHttp 4.x override: socket.io-client bundles OkHttp 3.x which fails on API 30+
+    // OkHttp 4.x is fully Kotlin-native and doesn't use restricted Android APIs
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("io.socket:socket.io-client:2.1.0")
 }

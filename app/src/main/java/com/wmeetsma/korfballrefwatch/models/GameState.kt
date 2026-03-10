@@ -16,5 +16,7 @@ data class GameState(
     val latestSubEventId: String? = null,
     val subOutInfo: String? = null,
     val subInInfo: String? = null,
-    val showSubPopup: Boolean = false
+    val showSubPopup: Boolean = false,
+    val hapticSignal: String? = null,
+    val hapticSignalId: String? = null
 )

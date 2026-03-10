@@ -8,10 +8,12 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.wear.compose.material.MaterialTheme
+import com.wmeetsma.korfballrefwatch.network.SocketManager
 import com.wmeetsma.korfballrefwatch.ui.DashboardScreen
+import com.wmeetsma.korfballrefwatch.ui.SetupScreen
 import com.wmeetsma.korfballrefwatch.viewmodels.MainViewModel
 
 class MainActivity : ComponentActivity() {
@@ -43,6 +45,8 @@ class MainActivity : ComponentActivity() {
                     val tTeam = intent.getStringExtra("timeoutTeam") ?: ""
                     data["timeoutTeam"] = if (tTeam == "NONE") "" else tTeam
                 }
+                if (intent.hasExtra("hapticSignal")) data["hapticSignal"] = intent.getStringExtra("hapticSignal") ?: ""
+                if (intent.hasExtra("hapticSignalId")) data["hapticSignalId"] = intent.getStringExtra("hapticSignalId") ?: ""
 
                 Log.d("MockSync", "Parsed Data: $data")
                 viewModel.updateFromMap(data)
@@ -69,12 +73,25 @@ class MainActivity : ComponentActivity() {
     override fun onDestroy() {
         super.onDestroy()
         unregisterReceiver(receiver)
+        SocketManager.disconnect()
     }
 }
 
 @Composable
 fun WearApp(viewModel: MainViewModel) {
+    var screen by remember { mutableStateOf("setup") }
+    
     MaterialTheme {
-        DashboardScreen(viewModel)
+        when (screen) {
+            "setup" -> SetupScreen(
+                onConfigured = { config ->
+                    if (config != null) {
+                        SocketManager.connect(config.ip, config.port)
+                    }
+                    screen = "dashboard"
+                }
+            )
+            "dashboard" -> DashboardScreen(viewModel)
+        }
     }
 }

@@ -3,6 +3,7 @@ package com.wmeetsma.korfballrefwatch.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.wmeetsma.korfballrefwatch.models.GameState
+import com.wmeetsma.korfballrefwatch.network.SocketManager
 import com.wmeetsma.korfballrefwatch.repository.GameStateRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.StateFlow
@@ -20,7 +21,7 @@ class MainViewModel : ViewModel() {
     private fun startTimerLoops() {
         viewModelScope.launch {
             while (isActive) {
-                delay(100) // 100ms ticks for smoother UI updates if needed, though 1s is fine. Let's do 100ms
+                delay(100)
                 val current = gameState.value
                 
                 var newGameTime = current.gameTimeRemainingMillis
@@ -59,6 +60,8 @@ class MainViewModel : ViewModel() {
     fun resetShotClock() {
         if (!isReadOnlyMode.value) {
             GameStateRepository.updateGameState { it.copy(shotClockRemainingMillis = 25000L) }
+            // Emit action back to web app via Socket.IO when in write mode
+            SocketManager.emitAction("RESET_SHOT_CLOCK")
         }
     }
     
@@ -70,11 +73,15 @@ class MainViewModel : ViewModel() {
                     isShotClockRunning = !it.isGameTimeRunning
                 ) 
             }
+            // Emit action back to web app via Socket.IO when in write mode
+            SocketManager.emitAction("TOGGLE_GAME_TIME")
         }
     }
     
     fun dismissPopups() {
-        GameStateRepository.updateGameState { it.copy(substitutionPending = false, timeoutRequestedTeam = null, showSubPopup = false) }
+        GameStateRepository.updateGameState {
+            it.copy(substitutionPending = false, timeoutRequestedTeam = null, showSubPopup = false)
+        }
     }
     
     fun updateFromMap(data: Map<String, Any>) {

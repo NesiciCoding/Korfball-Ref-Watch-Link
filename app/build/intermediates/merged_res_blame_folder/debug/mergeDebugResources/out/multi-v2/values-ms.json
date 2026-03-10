@@ -4,24 +4,24 @@
             "outputFile": "com.wmeetsma.korfballrefwatch.app-mergeDebugResources-46:/values-ms/values-ms.xml",
             "map": [
                 {
-                    "source": "/Users/wmeetsma/.gradle/caches/8.13/transforms/c907c1200688ccb18a4d65a12e74f94d/transformed/core-1.12.0/res/values-ms/values-ms.xml",
+                    "source": "/Users/wmeetsma/.gradle/caches/9.3.1/transforms/800a7a137877db08e13390e5b11ccf70/transformed/play-services-basement-18.0.0/res/values-ms/values.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,150,252,349,459,565,683,798",
-                        "endColumns": "94,101,96,109,105,117,114,100",
-                        "endOffsets": "145,247,344,454,560,678,793,894"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "141",
+                        "endOffsets": "336"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,41",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,200,302,399,509,615,733,4387",
-                        "endColumns": "94,101,96,109,105,117,114,100",
-                        "endOffsets": "195,297,394,504,610,728,843,4483"
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "2068",
+                        "endColumns": "145",
+                        "endOffsets": "2209"
                     }
                 },
                 {
-                    "source": "/Users/wmeetsma/.gradle/caches/8.13/transforms/bc3f8a9099f1067383ddc040ce9a27fd/transformed/ui-release/res/values-ms/values-ms.xml",
+                    "source": "/Users/wmeetsma/.gradle/caches/9.3.1/transforms/e73d32bf0a046b3cf157717415b453e4/transformed/ui-release/res/values-ms/values-ms.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "/Users/wmeetsma/.gradle/caches/8.13/transforms/988ee9276ac601e3804517aa615c2a93/transformed/play-services-base-18.0.1/res/values-ms/values.xml",
+                    "source": "/Users/wmeetsma/.gradle/caches/9.3.1/transforms/96536e22d4ed215f4b3f612830fedaad/transformed/core-1.12.0/res/values-ms/values-ms.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,150,252,349,459,565,683,798",
+                        "endColumns": "94,101,96,109,105,117,114,100",
+                        "endOffsets": "145,247,344,454,560,678,793,894"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,41",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,302,399,509,615,733,4387",
+                        "endColumns": "94,101,96,109,105,117,114,100",
+                        "endOffsets": "195,297,394,504,610,728,843,4483"
+                    }
+                },
+                {
+                    "source": "/Users/wmeetsma/.gradle/caches/9.3.1/transforms/cfbdd3b7725568147e0f972a70c1857b/transformed/play-services-base-18.0.1/res/values-ms/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,23 +69,6 @@
                         "startOffsets": "1022,1128,1301,1431,1537,1709,1841,1961,2214,2399,2508,2683,2818,2989,3164,3231,3295",
                         "endColumns": "105,172,129,105,171,131,119,106,184,108,174,134,170,174,66,63,82",
                         "endOffsets": "1123,1296,1426,1532,1704,1836,1956,2063,2394,2503,2678,2813,2984,3159,3226,3290,3373"
-                    }
-                },
-                {
-                    "source": "/Users/wmeetsma/.gradle/caches/8.13/transforms/35f82ff09dc0b5704565548dcdcf41c7/transformed/play-services-basement-18.0.0/res/values-ms/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "141",
-                        "endOffsets": "336"
-                    },
-                    "to": {
-                        "startLines": "19",
-                        "startColumns": "4",
-                        "startOffsets": "2068",
-                        "endColumns": "145",
-                        "endOffsets": "2209"
                     }
                 }
             ]

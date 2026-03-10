@@ -4,7 +4,7 @@
             "outputFile": "com.wmeetsma.korfballrefwatch.app-mergeDebugResources-46:/values-ur/values-ur.xml",
             "map": [
                 {
-                    "source": "/Users/wmeetsma/.gradle/caches/8.13/transforms/c907c1200688ccb18a4d65a12e74f94d/transformed/core-1.12.0/res/values-ur/values-ur.xml",
+                    "source": "/Users/wmeetsma/.gradle/caches/9.3.1/transforms/96536e22d4ed215f4b3f612830fedaad/transformed/core-1.12.0/res/values-ur/values-ur.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/Users/wmeetsma/.gradle/caches/8.13/transforms/bc3f8a9099f1067383ddc040ce9a27fd/transformed/ui-release/res/values-ur/values-ur.xml",
+                    "source": "/Users/wmeetsma/.gradle/caches/9.3.1/transforms/cfbdd3b7725568147e0f972a70c1857b/transformed/play-services-base-18.0.1/res/values-ur/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,297,457,579,686,822,945,1053,1153,1301,1407,1575,1699,1841,2006,2065,2128",
+                        "endColumns": "103,159,121,106,135,122,107,99,147,105,167,123,141,164,58,62,83",
+                        "endOffsets": "296,456,578,685,821,944,1052,1152,1300,1406,1574,1698,1840,2005,2064,2127,2211"
+                    },
+                    "to": {
+                        "startLines": "11,12,13,14,15,16,17,18,20,21,22,23,24,25,26,27,28",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1003,1111,1275,1401,1512,1652,1779,1891,2147,2299,2409,2581,2709,2855,3024,3087,3154",
+                        "endColumns": "107,163,125,110,139,126,111,103,151,109,171,127,145,168,62,66,87",
+                        "endOffsets": "1106,1270,1396,1507,1647,1774,1886,1990,2294,2404,2576,2704,2850,3019,3082,3149,3237"
+                    }
+                },
+                {
+                    "source": "/Users/wmeetsma/.gradle/caches/9.3.1/transforms/e73d32bf0a046b3cf157717415b453e4/transformed/ui-release/res/values-ur/values-ur.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/Users/wmeetsma/.gradle/caches/8.13/transforms/35f82ff09dc0b5704565548dcdcf41c7/transformed/play-services-basement-18.0.0/res/values-ur/values.xml",
+                    "source": "/Users/wmeetsma/.gradle/caches/9.3.1/transforms/800a7a137877db08e13390e5b11ccf70/transformed/play-services-basement-18.0.0/res/values-ur/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,23 +69,6 @@
                         "startOffsets": "1995",
                         "endColumns": "151",
                         "endOffsets": "2142"
-                    }
-                },
-                {
-                    "source": "/Users/wmeetsma/.gradle/caches/8.13/transforms/988ee9276ac601e3804517aa615c2a93/transformed/play-services-base-18.0.1/res/values-ur/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "193,297,457,579,686,822,945,1053,1153,1301,1407,1575,1699,1841,2006,2065,2128",
-                        "endColumns": "103,159,121,106,135,122,107,99,147,105,167,123,141,164,58,62,83",
-                        "endOffsets": "296,456,578,685,821,944,1052,1152,1300,1406,1574,1698,1840,2005,2064,2127,2211"
-                    },
-                    "to": {
-                        "startLines": "11,12,13,14,15,16,17,18,20,21,22,23,24,25,26,27,28",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1003,1111,1275,1401,1512,1652,1779,1891,2147,2299,2409,2581,2709,2855,3024,3087,3154",
-                        "endColumns": "107,163,125,110,139,126,111,103,151,109,171,127,145,168,62,66,87",
-                        "endOffsets": "1106,1270,1396,1507,1647,1774,1886,1990,2294,2404,2576,2704,2850,3019,3082,3149,3237"
                     }
                 }
             ]

@@ -26,6 +26,7 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.TimeText
 import androidx.wear.compose.material.dialog.Dialog
+import com.wmeetsma.korfballrefwatch.network.SocketManager
 import com.wmeetsma.korfballrefwatch.viewmodels.MainViewModel
 
 @Composable
@@ -63,6 +64,28 @@ fun DashboardScreen(viewModel: MainViewModel) {
         }
     }
 
+    LaunchedEffect(state.hapticSignalId) {
+        if (state.hapticSignalId != null && state.hapticSignal != null) {
+            val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val vibratorManager = context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                vibratorManager.defaultVibrator
+            } else {
+                @Suppress("DEPRECATION")
+                context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            }
+            
+            val effect = when (state.hapticSignal) {
+                "TIMEOUT_PING" -> VibrationEffect.createWaveform(longArrayOf(0, 150, 100, 150, 100, 150), -1) // 3 quick
+                "SUB_PING" -> VibrationEffect.createOneShot(800, VibrationEffect.DEFAULT_AMPLITUDE) // 1 long
+                "SHOT_CLOCK_PING" -> VibrationEffect.createWaveform(longArrayOf(0, 300, 150, 300), -1) // 2 medium
+                "GAME_CLOCK_PING" -> VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE) // 1 short tap
+                else -> null
+            }
+            
+            effect?.let { vibrator.vibrate(it) }
+        }
+    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -75,6 +98,35 @@ fun DashboardScreen(viewModel: MainViewModel) {
         contentAlignment = Alignment.Center
     ) {
         TimeText() // Default Wear OS time at top edge
+        
+        // Wi-Fi Connection Status Dot (top-left)
+        val connState by SocketManager.connectionState.collectAsState()
+        val dotColor = when (connState) {
+            SocketManager.ConnectionState.Connected    -> Color(0xFF4CAF50) // green
+            SocketManager.ConnectionState.Connecting  -> Color(0xFFFFC107) // amber
+            SocketManager.ConnectionState.Error       -> Color(0xFFF44336) // red
+            SocketManager.ConnectionState.Disconnected -> Color.Transparent
+        }
+        val dotLabel = when (connState) {
+            SocketManager.ConnectionState.Connected    -> "WiFi"
+            SocketManager.ConnectionState.Connecting  -> "..."
+            SocketManager.ConnectionState.Error       -> "ERR"
+            SocketManager.ConnectionState.Disconnected -> ""
+        }
+        if (connState != SocketManager.ConnectionState.Disconnected) {
+            Row(
+                modifier = Modifier.align(Alignment.TopStart).padding(start = 8.dp, top = 28.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(3.dp)
+            ) {
+                Box(
+                    modifier = Modifier
+                        .size(6.dp)
+                        .background(dotColor, shape = androidx.compose.foundation.shape.CircleShape)
+                )
+                Text(dotLabel, color = dotColor, fontSize = 8.sp)
+            }
+        }
         
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
